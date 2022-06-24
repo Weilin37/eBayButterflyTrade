@@ -43,3 +43,29 @@ The "Fill In" phase takes the search results from the "List Only" phase and goes
 
 ### Phase 3: Download Images
 The "Download Images" phase is the last step. After all the information is scraped from each species, the script will go into each CSV file in "past sales" and download the primary image in each listing. This phase is relatively quick. The images will be saved in the "past sales\images" folder, so make sure the folder exists.
+
+# Guide for Butterfly Clustering
+
+### Pre-requisites
+
+As a pre-requisite, install python 3 (version 3.8 is used at the time of writing) and jupyterlab to run the jupyter notebooks. There will also be several python packages which are imported in the beginning of each notebook that will need to be installed.
+
+### Introduction
+
+This guide is to run the clustering algorithm for clustering butterfly images based on feature similarity. Inside the "Butterfly Image Clustering" folder, you will see two folders and two notebook scripts.
+
+The "Clusters" folder is where clustering visual results are saved. The "images" folder is where input images ready for clustering are stored.
+
+The two notebooks are described below:
+
+### Image Processing
+The "Image Processing.ipynb" jupyter notebook is to process images and prepare them for clustering. There are three primary cells aiming at three different tasks:
+
+1. Convert white backgrounds into transparent backgrounds
+2. Crop images so that it crops to the minimum boundary size
+3. Add paddings to the images so that the butterflies are proportional in size relative to other butterflies. The proportions are determined via a separate file (in this tutorial, it is wingspan.csv) that contains wingspan information for the butterflies in question. The script will read this information and adjust the paddings proportionally.
+
+It is up to the user to determine which of theses processing steps would be needed
+
+### Image Clustering
+The "Image Clustering.ipynb" notebook
