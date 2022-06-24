@@ -68,4 +68,4 @@ The "Image Processing.ipynb" jupyter notebook is to process images and prepare t
 It is up to the user to determine which of theses processing steps would be needed
 
 ### Image Clustering
-The "Image Clustering.ipynb" notebook
+The "Image Clustering.ipynb" notebook is the primary notebook to conduct clustering after any processing step. The script will read images fro mthe images folder, load the clustering VVG16() model, collect clustering features, perform k-means clustering, and save the clustering results in a CSV file (clusters.csv) and the visual results in the "Clusters" folder.
