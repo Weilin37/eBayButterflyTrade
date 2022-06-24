@@ -1,0 +1,34 @@
+# Guide for eBay Butterfly Scraping
+
+### Pre-requisites
+
+As a pre-requisite, install python 3 (version 3.8 is used at the time of writing) and jupyterlab to run the jupyter notebooks. There will also be several python packages which are imported in the beginning of each notebook that will need to be installed.
+
+### Introduction
+
+This guide is to run the web scraper for butterflies sold in eBay. It is meant to scrape butterfies worldwide based on their search terms (typically species name) and listings that are instant and auction-based.
+
+Inside the "Butterfly Scraping" folder, you'll see a folder called "Past Data" and a list of jupyter ipynb python files.
+
+The "Past Data" folder is all the previously scraped data. 
+
+The list of python files are split into the following:
+
+1. "Past Sales List Only.ipynb" file
+2. "Past Sales Fill In.ipynb" file
+3. "Download Images.ipynb" file
+
+The files are split into three because the scraping works in three phases:
+
+### Phase 1: List Only
+The "List Only" phase uses the "Past Sales List Only.ipynb" Jupyter notebook file. What this accomplishes is getting an initial scraping of the search results in eBay, without going into each listing in detail. This file needs a few steps to work:
+
+1. Base folder to contain the files. This is usually a folder like "June 2022" to indicate the month and year of scraping. For the purpose of this tutorial the folder will be called "Example Base Folder"
+2. A folder called "past sales" inside the base folder. This is to contain scraping results on an individual species basis
+3. A folder called "images" inside the "past sales" folder. This is to contain scraped images from each listing
+4. A CSV file with a list of species names that need to be searched scraped. the file must be called "species.csv" with one column named "Species"
+5. A "www.ProxyCrawl.com" subscription. The scraper utilizes a third-party service called "proxycrawl" that automatically solves "Captchas" to get past eBay scraping captchas. 
+6. In the 2nd cell, change the parameters to include your proxycrawl API key, your base folder name, the date of scraping, the "part" and "part size" (see next step)
+7. Due to the sheer volume of species that need to be scraped, your "species.csv" may be tens of thousands of rows large. It is recommended to run mulitple versions of this notebook in parallel. The "part" variable in the 2nd cell splits up the "species.csv" list into several parts of size 500 so that the work is divided in each parallel run. The part size can be changed in the "part size" variable in the 2nd cell
+8. After the parameters are set, run each cell in the notebook up to the last.
+9. While this script is running, it will create a CSV file that keeps track of the scraping progress. It will include information on the species scraped, the URL of the search term, whether any results are found, the number of found results, and the number of attempts made to solve the captcha. Do note move or modify this file as this file is also used to resume progress in the case that the script is interrupted for any reason.
