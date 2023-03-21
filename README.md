@@ -8,9 +8,7 @@ As a pre-requisite, install python 3 (version 3.8 is used at the time of writing
 
 This guide is to run the web scraper for butterflies sold in eBay. It is meant to scrape butterfies worldwide based on their search terms (typically species name) and listings that are instant and auction-based.
 
-Inside the "Butterfly Scraping" folder, you'll see a folder called "Past Data" and a list of jupyter ipynb python files.
-
-The "Past Data" folder is all the previously scraped data. 
+Inside the "Butterfly Scraping" folder, you'll see a list of jupyter ipynb python files.
 
 The list of python files are split into the following:
 
